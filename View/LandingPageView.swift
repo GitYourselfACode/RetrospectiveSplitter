@@ -8,17 +8,21 @@
 import SwiftUI
 import UIKit
 
-struct AddPayerView: View {
+struct LandingPageView: View {
+    
+    
     
     @State private var topLeftTotalPayText = 0.0
-    @State private var totalSplitString = ""
+    @State private var totalPayString = ""
     
     
     var body: some View {
         
+// Add the VStack for all elements on page!
+        
         HStack (spacing: 220) {
             
-            Text("Total \(totalSplitString)€")
+            Text("Total \(totalPayString)€")
             
             Button {
                 //Open NewOwesMeView
@@ -31,27 +35,44 @@ struct AddPayerView: View {
         
         
         
+// Add Table of payees here
+        
+        
+        
+        
         VStack (spacing: 5) {
             
             Button{
-                
+                // open NewUnpaidReceiptView
             } label: {
-                HStack (spacing: 10) {
+                Text("Add Unpaid Receipt")
+                    .font(.system(size: 25))
+                    .foregroundStyle(Color.white)
+                    .padding()
+                    .padding(.horizontal, 34)
+                    .background(Color.blue)
+                    .cornerRadius(15)
+            }
+            
+            Button{
+                //
+            } label: {
+                HStack (spacing: 20) {
                     Text("Change Split")
-                        .font(.system(size: 30))
+                        .font(.system(size: 25))
                         //.padding()
                         //.padding(.horizontal, 20)
                         //.background(Color.blue)
-                        .foregroundColor(Color.white)
+                        .foregroundStyle(Color.white)
                         //.cornerRadius(40)
                     //.offset(x: 0, y: 300)
                     Image(systemName: "align.vertical.bottom.fill")
                     //.offset(x: 0, y: 300)
-                        .font(.system(size: 30))
+                        .font(.system(size: 25))
                         .foregroundStyle(Color.white)
                 }
                 .padding()
-                .padding(.horizontal, 50)
+                .padding(.horizontal, 45)
                 .background(Color.blue)
                 .cornerRadius(15)
                 //.offset(x: 0, y: 300)
@@ -61,9 +82,9 @@ struct AddPayerView: View {
             Button {
                 
             } label: {
-                HStack (spacing: 30) {
+                HStack (spacing: 25) {
                     Text("Calculate Now")
-                        .font(.system(size: 30))
+                        .font(.system(size: 25))
                         .foregroundStyle(Color.white)
                     //.offset(x: 0, y: 320)
                     Image(
@@ -81,10 +102,10 @@ struct AddPayerView: View {
                 .cornerRadius(15)
             }
         }
-        .offset(x: 0, y: 300)
+        .offset(x: 0, y: 250)
     }
 }
 
 #Preview {
-    AddPayerView()
+    LandingPageView()
 }
